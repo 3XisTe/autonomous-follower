@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/hueRangeBar"
+        android:layout_marginBottom="26dp"
+        android:text="HUE Settings" />
+
+    <org.florescu.android.rangeseekbar.RangeSeekBar
+        android:id="@+id/hueRangeBar"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/satRangeBar"
+        android:layout_marginBottom="10dp"
+        app:absoluteMinValue="180"
+        app:absoluteMaxValue="0"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/satRangeBar"
+        android:layout_marginBottom="26dp"
+        android:text="Saturation Settings" />
+
+    <org.florescu.android.rangeseekbar.RangeSeekBar
+        android:id="@+id/satRangeBar"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/valRangeBar"
+        android:layout_marginBottom="10dp"
+        app:absoluteMinValue="255"
+        app:absoluteMaxValue="0"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/valRangeBar"
+        android:layout_marginBottom="26dp"
+        android:text="Value Settings" />
+
+    <org.florescu.android.rangeseekbar.RangeSeekBar
+        android:id="@+id/valRangeBar"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="26dp"
+        app:absoluteMinValue="255"
+        app:absoluteMaxValue="0"/>
+
+    <Button
+        android:id="@+id/buttonConfirm"
+        style="@android:style/Widget.Button"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hueRangeBar"
+        android:layout_marginBottom="10dp"
+        android:text="Confirm" />
+
+    <Button
+        android:id="@+id/buttonMask"
+        style="@android:style/Widget.Button"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hueRangeBar"
+        android:layout_marginBottom="10dp"
+        android:layout_toStartOf="@+id/buttonSize"
+        android:text="Mode" />
+
+    <Button
+        android:id="@+id/buttonSize"
+        style="@android:style/Widget.Button"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/hueRangeBar"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toStartOf="@+id/java_camera_view"
+        android:text="Set size" />
+
+    <org.opencv.android.JavaCameraView
+        android:id="@+id/java_camera_view"
+        android:layout_width="wrap_content"
+        android:layout_height="270dp"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="0dp"
+        android:layout_marginEnd="0dp"
+        android:layout_marginBottom="0dp"
+        android:layout_toEndOf="@+id/satRangeBar"
+        android:orientation="horizontal" />
+
+</RelativeLayout>
